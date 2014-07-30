@@ -33,4 +33,19 @@
 {
     return [[[BNRItemStore sharedStore] allItems] count];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:@"UITableViewCell"];
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *item = items[indexPath.row];
+    
+    cell.textLabel.text = [item description];
+    
+    return cell;
+}
+
+
 @end
