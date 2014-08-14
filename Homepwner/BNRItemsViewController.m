@@ -75,7 +75,12 @@
 
 - (IBAction)addNewItem:(id)sender
 {
+    //make a new index path for the 0th section, last row
+    NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
     
+    //insert this new row into the table
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 - (IBAction)toggleEditMode:(id)sender
