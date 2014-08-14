@@ -135,6 +135,11 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
     
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = items[indexPath.row];
+    
+    detailViewController.item = selectedItem;
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 @end
