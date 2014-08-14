@@ -9,6 +9,7 @@
 #import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRDetailViewController.h"
 
 @interface BNRItemsViewController ()
 @property (nonatomic, strong) IBOutlet UIView *headerView;
@@ -128,5 +129,12 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"Remove";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 @end
