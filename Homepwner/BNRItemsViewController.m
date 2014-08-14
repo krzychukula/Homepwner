@@ -12,7 +12,7 @@
 #import "BNRDetailViewController.h"
 
 @interface BNRItemsViewController ()
-@property (nonatomic, strong) IBOutlet UIView *headerView;
+
 @end
 
 @implementation BNRItemsViewController
@@ -23,6 +23,13 @@
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                target:self
+                                action:@selector(addNewItem:)];
+        navItem.rightBarButtonItem = bbi;
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -37,9 +44,7 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -63,15 +68,6 @@
     return cell;
 }
 
-- (UIView *)headerView
-{
-    //if you have not loaded the headerView yet
-    if(!_headerView) {
-        //Load HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return _headerView;
-}
 
 - (IBAction)addNewItem:(id)sender
 {
@@ -87,23 +83,6 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
-- (IBAction)toggleEditMode:(id)sender
-{
-    //if you are currently in editing mode
-    if (self.isEditing) {
-        //change text to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        //turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        //change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        
-        //enter editing mode
-        [self setEditing:YES animated:YES];
-    }
-
-}
 
 -(void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
