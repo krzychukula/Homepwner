@@ -40,5 +40,19 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    //clear first responder
+    [self.view endEditing:YES];
+    
+    //"save" changes to item
+    BNRItem *item = self.item;
+    item.itemName = self.nameField.text;
+    item.serialNumber = self.serialNumberField.text;
+    item.valueInDollars = [self.valueField.text intValue];
+}
+
 
 @end
