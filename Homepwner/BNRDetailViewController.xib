@@ -7,8 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="QEu-Q4-GYE" id="esj-Ts-95T"/>
+                <outlet property="imageView" destination="ofq-hw-qTa" id="OO8-8w-NZX"/>
                 <outlet property="nameField" destination="3rz-9H-ekZ" id="Z2W-D7-U5h"/>
                 <outlet property="serialNumberField" destination="w7z-8C-0HW" id="d4A-FX-fhb"/>
+                <outlet property="toolbar" destination="n1c-Qr-6LR" id="VJ2-KB-q0L"/>
                 <outlet property="valueField" destination="fkP-mM-g9r" id="obQ-Q2-3iR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -70,6 +72,21 @@
                         <outlet property="delegate" destination="-1" id="mSk-Px-rXa"/>
                     </connections>
                 </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofq-hw-qTa">
+                    <rect key="frame" x="20" y="228" width="280" height="240"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-Qr-6LR">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="pyR-aT-08U">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="uPX-le-LpB"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
