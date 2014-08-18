@@ -47,6 +47,9 @@
     
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
     
+    NSString *imageKey = self.item.itemKey;
+    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
+    self.imageView.image = imageToDisplay;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
