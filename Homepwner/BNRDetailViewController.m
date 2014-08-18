@@ -85,6 +85,18 @@
 }
 
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //get picked image from info dictionary
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    //put that image onto the screen
+    self.imageView.image = image;
+    
+    //take image picker off the screen
+    //I must call this dismiss method
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end
