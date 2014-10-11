@@ -20,8 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-aL-a2G">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-aL-a2G">
                     <rect key="frame" x="20" y="88" width="46" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="2JT-Ua-Hgp"/>
+                        <constraint firstAttribute="height" constant="21" id="Q3U-mx-eMU"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -41,7 +45,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rz-9H-ekZ">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rz-9H-ekZ">
                     <rect key="frame" x="74" y="85" width="226" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -87,7 +91,12 @@
                 <constraint firstAttribute="bottom" secondItem="n1c-Qr-6LR" secondAttribute="bottom" id="64V-fq-u5b"/>
                 <constraint firstAttribute="trailing" secondItem="n1c-Qr-6LR" secondAttribute="trailing" id="L33-D5-IES"/>
                 <constraint firstItem="n1c-Qr-6LR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="R9T-cy-jdQ"/>
+                <constraint firstItem="kmK-aL-a2G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="88" id="aIq-a6-wfj"/>
+                <constraint firstItem="3rz-9H-ekZ" firstAttribute="baseline" secondItem="kmK-aL-a2G" secondAttribute="baseline" id="gxP-3C-HhA"/>
                 <constraint firstItem="n1c-Qr-6LR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iN6-hR-3qS"/>
+                <constraint firstItem="3rz-9H-ekZ" firstAttribute="leading" secondItem="kmK-aL-a2G" secondAttribute="trailing" constant="8" id="jsc-bX-ngd"/>
+                <constraint firstAttribute="trailing" secondItem="3rz-9H-ekZ" secondAttribute="trailing" constant="20" id="rlZ-zw-rLG"/>
+                <constraint firstItem="kmK-aL-a2G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="z9f-Jj-eF8"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <connections>
