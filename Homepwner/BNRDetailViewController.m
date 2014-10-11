@@ -73,12 +73,6 @@
 }
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
-    
-    for (UIView *subview in self.view.subviews) {
-        if([subview hasAmbiguousLayout]){
-            [subview exerciseAmbiguityInLayout];
-        }
-    }
 }
 
 - (IBAction)takePicture:(id)sender {
@@ -112,15 +106,6 @@
     //take image picker off the screen
     //I must call this dismiss method
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)viewDidLayoutSubviews
-{
-    for (UIView *subview in self.view.subviews) {
-        if([subview hasAmbiguousLayout]){
-            NSLog(@"AMBIGUOUS: %@", subview);
-        }
-    }
 }
 
 @end
