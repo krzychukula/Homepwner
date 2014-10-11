@@ -73,6 +73,12 @@
 }
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
+    
+    for (UIView *subview in self.view.subviews) {
+        if([subview hasAmbiguousLayout]){
+            [subview exerciseAmbiguityInLayout];
+        }
+    }
 }
 
 - (IBAction)takePicture:(id)sender {
@@ -108,5 +114,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    for (UIView *subview in self.view.subviews) {
+        if([subview hasAmbiguousLayout]){
+            NSLog(@"AMBIGUOUS: %@", subview);
+        }
+    }
+}
 
 @end
