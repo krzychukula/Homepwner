@@ -122,6 +122,13 @@
     //the image view was pointed to by the imageView property
     self.imageView = iv;
     
+    //Set the vertical priorities to be less than
+    //those of the other subviews
+    [self.imageView setContentHuggingPriority:200
+                                      forAxis:UILayoutConstraintAxisVertical];
+    [self.imageView setContentCompressionResistancePriority:700
+                                                    forAxis:UILayoutConstraintAxisVertical];
+    
     NSDictionary *nameMap = @{@"imageView": self.imageView,
                               @"dateLabel": self.dateLabel,
                               @"toolbar"  : self.toolbar};
