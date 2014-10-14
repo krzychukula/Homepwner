@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
@@ -31,6 +32,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
     
     BNRItem *item = self.item;
     
@@ -146,5 +150,28 @@
     [self.view addConstraints:horizontalConstraints];
     [self.view addConstraints:verticalConstraints];
 }
+
+- (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    //is it an iPad? No preparation necessary
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    
+    //is it landscape
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    }else{
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self prepareViewsForOrientation:toInterfaceOrientation];
+}
+
 
 @end

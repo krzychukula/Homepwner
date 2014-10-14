@@ -220,6 +220,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Big Nerd Ranch";
 				TargetAttributes = {
+					01F8980A1988C0F20068FD9F = {
+						DevelopmentTeam = 8262AX47FV;
+					};
 					01F898251988C0F40068FD9F = {
 						TestTargetID = 01F8980A1988C0F20068FD9F;
 					};
