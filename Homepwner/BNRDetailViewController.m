@@ -81,6 +81,13 @@
 
 - (IBAction)takePicture:(id)sender {
     
+    if ([self.imagePickerPopover isPopoverVisible]) {
+        //if the popover is already up, get rid of it
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+        return;
+    }
+    
     UIImagePickerController *imagePicker =
     [[UIImagePickerController alloc] init];
     
@@ -109,6 +116,12 @@
     
 }
 
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"User dismissed popover");
+    self.imagePickerPopover = nil;
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -120,9 +133,16 @@
     //put that image onto the screen
     self.imageView.image = image;
     
-    //take image picker off the screen
-    //I must call this dismiss method
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //do I have a popover?
+    if (self.imagePickerPopover) {
+        //dismiss it
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+    }else{
+        //take image picker off the screen
+        //I must call this dismiss method
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad
