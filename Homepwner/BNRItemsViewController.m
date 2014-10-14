@@ -73,14 +73,18 @@
 {
     //create a new BNRItem and add it to the store
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:YES];
+    detailViewController.item = newItem;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    [self presentViewController:navController animated:YES completion:nil];
     
     //figure out where item is in the array
-    NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
-    
-    //insert this new row into the table
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+//    NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+//    
+//    //insert this new row into the table
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 
@@ -113,7 +117,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
     
     NSArray *items = [[BNRItemStore sharedStore] allItems];
     BNRItem *selectedItem = items[indexPath.row];

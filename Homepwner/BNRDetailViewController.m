@@ -9,6 +9,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import "BNRItemStore.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -22,6 +23,35 @@
 @end
 
 @implementation BNRDetailViewController
+
+- (instancetype)initForNewItem:(BOOL)isNew
+{
+    self = [super initWithNibName:nil bundle:nil];
+    
+    if(self){
+        if (isNew) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                      target:self
+                                                                                      action:@selector(save:)];
+            self.navigationItem.rightBarButtonItem = doneItem;
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                        target:self
+                                                                                        action:@selector(cancel:)];
+            self.navigationItem.leftBarButtonItem = cancelItem;
+        }
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"Use initForNewItem"
+                                 userInfo:nil];
+    return nil;
+}
 
 - (void)setItem:(BNRItem *)item
 {
@@ -204,6 +234,18 @@
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [self prepareViewsForOrientation:toInterfaceOrientation];
+}
+
+- (void)save:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cancel:(id)sender
+{
+    //if the user cancelled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore] removeItem:self.item];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
