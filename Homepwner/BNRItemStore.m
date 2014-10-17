@@ -42,7 +42,14 @@
 {
     self = [super init];
     if(self) {
-        _privateItems = [[NSMutableArray alloc] init];
+        NSString *path = [self itemArchivePath];
+        
+        _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
+        //if there is no previous data create new array
+        if (!_privateItems) {
+            _privateItems = [[NSMutableArray alloc] init];
+        }
     }
     return self;
 }
