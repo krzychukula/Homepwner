@@ -82,4 +82,16 @@
     [self.privateItems insertObject:item atIndex:toIndex];
     
 }
+
+- (NSString *)itemArchivePath
+{
+    //make sure that the first argument is NSDocumentDictionary
+    //and not NSDocumentation Dictionary
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    //get one document directory from that list
+    NSString *documentDirectory = [documentDirectories firstObject];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
 @end
