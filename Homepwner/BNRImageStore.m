@@ -64,6 +64,9 @@
         return;
     }
     [self.dictionary removeObjectForKey:key];
+    
+    NSString *imagePath = [self imagePathForKey:key];
+    [[NSFileManager defaultManager] removeItemAtPath:imagePath error:nil];
 }
 
 - (NSString *)imagePathForKey:(NSString *)key
