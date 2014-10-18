@@ -55,7 +55,19 @@
 
 - (UIImage *)imageForKey:(NSString *)key
 {
-    return self.dictionary[key];
+    UIImage *result = self.dictionary[key];
+    if (!result) {
+        NSString *imagePath = [self imagePathForKey:key];
+        //create uiimage object from file
+        result = [UIImage imageWithContentsOfFile:imagePath];
+        //if we found an image on the file system, place it into the cache
+        if (result) {
+            self.dictionary[key] = result;
+        }else{
+            NSLog(@"Error: unable to find %@", [self imagePathForKey:key]);
+        }
+    }
+    return result;
 }
 
 - (void)deleteImageForKey:(NSString *)key
