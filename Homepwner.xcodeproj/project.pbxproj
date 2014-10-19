@@ -27,6 +27,8 @@
 		01F898451988C5FD0068FD9F /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F898441988C5FD0068FD9F /* BNRItemStore.m */; };
 		83B07FDB19F4153700AC6975 /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B07FDA19F4153700AC6975 /* BNRItemCell.m */; };
 		83B07FDC19F4153700AC6975 /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B07FDA19F4153700AC6975 /* BNRItemCell.m */; };
+		83B07FDE19F4163200AC6975 /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B07FDD19F4163200AC6975 /* BNRItemCell.xib */; };
+		83B07FDF19F4163200AC6975 /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B07FDD19F4163200AC6975 /* BNRItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		01F898441988C5FD0068FD9F /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 		83B07FD919F4153700AC6975 /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemCell.h; sourceTree = "<group>"; };
 		83B07FDA19F4153700AC6975 /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemCell.m; sourceTree = "<group>"; };
+		83B07FDD19F4163200AC6975 /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 			children = (
 				83B07FD919F4153700AC6975 /* BNRItemCell.h */,
 				83B07FDA19F4153700AC6975 /* BNRItemCell.m */,
+				83B07FDD19F4163200AC6975 /* BNRItemCell.xib */,
 				01F898401988C4FA0068FD9F /* BNRItem.h */,
 				01F898411988C4FA0068FD9F /* BNRItem.m */,
 				01F898431988C5FD0068FD9F /* BNRItemStore.h */,
@@ -258,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A8F298199CC98D0041E758 /* BNRDetailViewController.xib in Resources */,
+				83B07FDE19F4163200AC6975 /* BNRItemCell.xib in Resources */,
 				01F898191988C0F20068FD9F /* InfoPlist.strings in Resources */,
 				01F898211988C0F30068FD9F /* Images.xcassets in Resources */,
 			);
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F898321988C0F40068FD9F /* InfoPlist.strings in Resources */,
+				83B07FDF19F4163200AC6975 /* BNRItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
