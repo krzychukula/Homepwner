@@ -84,6 +84,43 @@
     return descriptionString;
 }
 
+- (void)setThumbnailFromImage:(UIImage *)image
+{
+    CGSize originalImageSize = image.size;
+    //The rectangle of the thumbnail
+    CGRect newRect = CGRectMake(0, 0, 40, 40);
+    //figure out a scaling ratio to make sure we maintain the same aspect ratio
+    float ratio = MAX(newRect.size.width / originalImageSize.width,
+                      newRect.size.height / originalImageSize.height);
+    
+    //create transparent bitmap context with scaling factor
+    //equal to that of the screen
+    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, 0.0);
+    //create a path that is a rounded rectangle
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:newRect
+                                                    cornerRadius:5.0];
+    //make all subsequent drawings clip to this rounded rectangle
+    [path addClip];
+    
+    //center the image in the thumbnail rectangle
+    CGRect projectRect;
+    projectRect.size.width = ratio * originalImageSize.width;
+    projectRect.size.height = ratio * originalImageSize.height;
+    projectRect.origin.x = (newRect.size.width - projectRect.size.width) / 2.0;
+    projectRect.origin.y = (newRect.size.height - projectRect.size.height) / 2.0;
+    
+    //draw the image in it
+    [image drawInRect:projectRect];
+    
+    //get the image from the image context
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+    self.thumbnail = smallImage;
+    
+    //cleanup image context resources; we're done
+    UIGraphicsEndImageContext();
+    
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
@@ -92,6 +129,7 @@
         _serialNumber = [aDecoder decodeObjectForKey:@"serialNumber"];
         _dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
         _itemKey = [aDecoder decodeObjectForKey:@"itemKey"];
+        _thumbnail = [aDecoder decodeObjectForKey:@"thumbnail"];
         
         _valueInDollars = [aDecoder decodeIntForKey:@"valueInDollars"];
     }
@@ -108,6 +146,7 @@
     [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
     [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
     [aCoder encodeObject:self.itemKey forKey:@"itemKey"];
+    [aCoder encodeObject:self.thumbnail forKey:@"thumbnail"];
     
     [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
 }

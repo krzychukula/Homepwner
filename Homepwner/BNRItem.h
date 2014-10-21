@@ -15,8 +15,14 @@
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, readonly, strong) NSDate *dateCreated;
 @property (nonatomic, copy) NSString *itemKey;
+@property (nonatomic, strong) UIImage *thumbnail;
+
+
 
 + (instancetype)randomItem;
+
+- (void)setThumbnailFromImage:(UIImage *)image;
+
 
 //designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
