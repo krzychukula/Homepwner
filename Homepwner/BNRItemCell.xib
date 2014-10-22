@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -45,6 +44,15 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No5-Nu-aBU">
+                        <rect key="frame" x="8" y="2" width="40" height="40"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="showImage:" destination="qkh-jJ-ahb" eventType="touchUpInside" id="IMQ-pM-Liq"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VLc-H5-gOE" firstAttribute="leading" secondItem="KHM-q0-sCk" secondAttribute="leadingMargin" id="4Al-N0-YwN"/>
@@ -52,12 +60,16 @@
                     <constraint firstItem="UEk-2C-QKT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ncL-4Q-uyG" secondAttribute="bottom" constant="1" id="5NB-g0-jEG"/>
                     <constraint firstAttribute="centerY" secondItem="VLc-H5-gOE" secondAttribute="centerY" id="5l7-nY-nba"/>
                     <constraint firstItem="tf6-f0-25s" firstAttribute="trailing" secondItem="KHM-q0-sCk" secondAttribute="trailingMargin" id="9RV-u4-AAd"/>
+                    <constraint firstItem="VLc-H5-gOE" firstAttribute="leading" secondItem="No5-Nu-aBU" secondAttribute="leading" id="9Rf-Vn-BAf"/>
                     <constraint firstItem="ncL-4Q-uyG" firstAttribute="leading" secondItem="UEk-2C-QKT" secondAttribute="leading" id="9bp-Cb-pX7"/>
                     <constraint firstItem="tf6-f0-25s" firstAttribute="centerY" secondItem="KHM-q0-sCk" secondAttribute="centerY" id="Cdv-Di-RgU"/>
                     <constraint firstItem="ncL-4Q-uyG" firstAttribute="trailing" secondItem="UEk-2C-QKT" secondAttribute="trailing" id="DkK-yO-Nl7"/>
+                    <constraint firstItem="VLc-H5-gOE" firstAttribute="bottom" secondItem="No5-Nu-aBU" secondAttribute="bottom" id="E7X-00-D2d"/>
                     <constraint firstItem="tf6-f0-25s" firstAttribute="top" secondItem="KHM-q0-sCk" secondAttribute="topMargin" constant="3" id="UeG-sx-sTL"/>
                     <constraint firstItem="ncL-4Q-uyG" firstAttribute="top" secondItem="KHM-q0-sCk" secondAttribute="top" id="dsT-6g-c7s"/>
                     <constraint firstItem="tf6-f0-25s" firstAttribute="leading" secondItem="UEk-2C-QKT" secondAttribute="trailing" constant="3" id="gtC-mA-cuU"/>
+                    <constraint firstItem="VLc-H5-gOE" firstAttribute="trailing" secondItem="No5-Nu-aBU" secondAttribute="trailing" id="iBD-AW-jUp"/>
+                    <constraint firstItem="VLc-H5-gOE" firstAttribute="top" secondItem="No5-Nu-aBU" secondAttribute="top" id="tp8-eQ-CBd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="UEk-2C-QKT" secondAttribute="bottom" constant="-7.5" id="wll-H5-qhI"/>
                 </constraints>
             </tableViewCellContentView>
