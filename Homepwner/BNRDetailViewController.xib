@@ -25,36 +25,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmK-aL-a2G">
-                    <rect key="frame" x="20" y="88" width="46" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="46" id="2JT-Ua-Hgp"/>
-                        <constraint firstAttribute="height" constant="21" id="Q3U-mx-eMU"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="88" width="45.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-PA-vvw">
-                    <rect key="frame" x="20" y="126" width="43" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Lcv-3q-4R1"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="M8m-lg-5Hc"/>
-                        <constraint firstAttribute="width" constant="43" id="hs3-vo-9KC"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="125" width="43" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMN-d7-KOb">
-                    <rect key="frame" x="20" y="164" width="42" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="rQu-Mq-vG0"/>
-                        <constraint firstAttribute="width" constant="42" id="ysZ-Lb-0bH"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="163" width="41.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rz-9H-ekZ">
-                    <rect key="frame" x="74" y="85" width="226" height="30"/>
+                    <rect key="frame" x="73" y="84" width="226.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -62,7 +49,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-8C-0HW">
-                    <rect key="frame" x="74" y="123" width="226" height="30"/>
+                    <rect key="frame" x="74" y="121.5" width="226" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -70,7 +57,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-mM-g9r">
-                    <rect key="frame" x="74" y="161" width="226" height="30"/>
+                    <rect key="frame" x="74" y="159" width="226" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
@@ -92,10 +79,7 @@
                     </items>
                 </toolbar>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEu-Q4-GYE">
-                    <rect key="frame" x="20" y="199" width="280" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="OZw-tL-GBN"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="197" width="280" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -135,6 +119,7 @@
             <connections>
                 <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="C2N-hz-z3g"/>
             </connections>
+            <point key="canvasLocation" x="135" y="10"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
