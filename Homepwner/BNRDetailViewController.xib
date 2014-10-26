@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -9,9 +10,12 @@
                 <outlet property="cameraButton" destination="n1c-Qr-6LR" id="5AB-gB-PUX"/>
                 <outlet property="dateLabel" destination="QEu-Q4-GYE" id="esj-Ts-95T"/>
                 <outlet property="nameField" destination="3rz-9H-ekZ" id="Z2W-D7-U5h"/>
+                <outlet property="nameLabel" destination="kmK-aL-a2G" id="Q3c-8a-DFI"/>
                 <outlet property="serialNumberField" destination="w7z-8C-0HW" id="d4A-FX-fhb"/>
+                <outlet property="serialNumberLabel" destination="vAN-PA-vvw" id="YLX-5G-Pn5"/>
                 <outlet property="toolbar" destination="n1c-Qr-6LR" id="VJ2-KB-q0L"/>
                 <outlet property="valueField" destination="fkP-mM-g9r" id="obQ-Q2-3iR"/>
+                <outlet property="valueLabel" destination="JMN-d7-KOb" id="Eh1-HF-iJe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
