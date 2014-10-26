@@ -43,6 +43,12 @@
                                                                                         action:@selector(cancel:)];
             self.navigationItem.leftBarButtonItem = cancelItem;
         }
+        
+        NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+        [defaultCenter addObserver:self
+                          selector:@selector(updateFonts)
+                              name:UIContentSizeCategoryDidChangeNotification
+                            object:nil];
     }
     
     return self;
@@ -267,6 +273,12 @@
     self.nameField.font = font;
     self.serialNumberField.font = font;
     self.valueField.font = font;
+}
+
+- (void)dealloc
+{
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self];
 }
 
 
