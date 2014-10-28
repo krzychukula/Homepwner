@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
@@ -31,12 +31,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAN-PA-vvw">
-                    <rect key="frame" x="20" y="125" width="43" height="20.5"/>
+                    <rect key="frame" x="20" y="125" width="45.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMN-d7-KOb">
-                    <rect key="frame" x="20" y="163" width="41.5" height="20.5"/>
+                    <rect key="frame" x="20" y="163" width="45.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -49,7 +49,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-8C-0HW">
-                    <rect key="frame" x="74" y="121.5" width="226" height="30"/>
+                    <rect key="frame" x="76.5" y="121.5" width="223.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -57,7 +57,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-mM-g9r">
-                    <rect key="frame" x="74" y="159" width="226" height="30"/>
+                    <rect key="frame" x="78" y="159" width="222" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
@@ -90,9 +90,11 @@
                 <constraint firstItem="QEu-Q4-GYE" firstAttribute="top" secondItem="fkP-mM-g9r" secondAttribute="bottom" constant="8" id="0jv-Nv-Y0g"/>
                 <constraint firstItem="vAN-PA-vvw" firstAttribute="leading" secondItem="kmK-aL-a2G" secondAttribute="leading" id="1ts-1E-L9v"/>
                 <constraint firstItem="vAN-PA-vvw" firstAttribute="top" secondItem="kmK-aL-a2G" secondAttribute="bottom" constant="17" id="39N-BY-g40"/>
+                <constraint firstItem="kmK-aL-a2G" firstAttribute="width" secondItem="vAN-PA-vvw" secondAttribute="width" id="4Tx-fc-gNe"/>
                 <constraint firstAttribute="bottom" secondItem="n1c-Qr-6LR" secondAttribute="bottom" id="4f2-VX-34O"/>
                 <constraint firstAttribute="bottom" secondItem="n1c-Qr-6LR" secondAttribute="bottom" id="64V-fq-u5b"/>
                 <constraint firstItem="vAN-PA-vvw" firstAttribute="top" secondItem="kmK-aL-a2G" secondAttribute="bottom" constant="17" id="90U-XA-fcQ"/>
+                <constraint firstItem="kmK-aL-a2G" firstAttribute="width" secondItem="JMN-d7-KOb" secondAttribute="width" id="DNJ-3s-v2H"/>
                 <constraint firstItem="JMN-d7-KOb" firstAttribute="top" secondItem="vAN-PA-vvw" secondAttribute="bottom" constant="17" id="Hrw-dn-4SX"/>
                 <constraint firstAttribute="trailing" secondItem="w7z-8C-0HW" secondAttribute="trailing" constant="20" id="Ioz-5g-dt6"/>
                 <constraint firstAttribute="trailing" secondItem="n1c-Qr-6LR" secondAttribute="trailing" id="L33-D5-IES"/>
