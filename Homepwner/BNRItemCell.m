@@ -17,4 +17,29 @@
     }
 }
 
+- (void)updateInterfaceForDynamicTypeSize
+{
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.nameLabel.font = font;
+    self.serialNumberLabel.font = font;
+    self.valueLabel.font = font;
+}
+
+- (void)awakeFromNib
+{
+    [self updateInterfaceForDynamicTypeSize];
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(updateInterfaceForDynamicTypeSize)
+               name:UIContentSizeCategoryDidChangeNotification
+             object:nil];
+}
+
+- (void)dealloc
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
+}
+
 @end
