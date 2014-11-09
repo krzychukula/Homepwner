@@ -10,9 +10,14 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 
+@import CoreData;
+
 @interface BNRItemStore ()
 
 @property (nonatomic) NSMutableArray *privateItems;
+@property (nonatomic, strong) NSMutableArray *allAssetTypes;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectModel *model;
 
 @end
 
@@ -42,14 +47,31 @@
 {
     self = [super init];
     if(self) {
-        NSString *path = [self itemArchivePath];
+        //Read in Homepwner.xcdatamodeld
+        _model = [NSManagedObjectModel mergedModelFromBundles:nil];
         
-        _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
         
-        //if there is no previous data create new array
-        if (!_privateItems) {
-            _privateItems = [[NSMutableArray alloc] init];
+        //where does the SQLite file go?
+        NSString *path = self.itemArchivePath;
+        NSURL *storeURL = [NSURL fileURLWithPath:path];
+        
+        NSError *error = nil;
+        
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType
+                               configuration:nil
+                                         URL:storeURL
+                                     options:nil
+                                       error:&error]) {
+            @throw [NSException exceptionWithName:@"OpenFailure"
+                                           reason:[error localizedDescription]
+                                         userInfo:nil];
         }
+        
+        //create the managed object context
+        _context = [[NSManagedObjectContext alloc] init];
+        _context.persistentStoreCoordinator = psc;
+        
     }
     return self;
 }
@@ -99,13 +121,17 @@
     //get one document directory from that list
     NSString *documentDirectory = [documentDirectories firstObject];
     
-    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+    return [documentDirectory stringByAppendingPathComponent:@"store.data"];
 }
 
 - (BOOL)saveChanges
 {
-    NSString *path = [self itemArchivePath];
-    //return YES on success
-    return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+    NSError *error = nil;
+    
+    BOOL successful = [self.context save:&error];
+    if (!successful) {
+        NSLog(@"Error saving: %@", [error localizedDescription]);
+    }
+    return successful;
 }
 @end
