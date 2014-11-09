@@ -10,8 +10,10 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "BNRAssetTypeViewController.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -26,6 +28,17 @@
 @end
 
 @implementation BNRDetailViewController
+- (IBAction)showAssetTypePicker:(id)sender {
+    
+    [self.view endEditing:YES];
+    
+    BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
+    avc.item = self.item;
+    
+    [self.navigationController pushViewController:avc
+                                         animated:YES];
+    
+}
 
 - (instancetype)initForNewItem:(BOOL)isNew
 {
@@ -93,6 +106,12 @@
     NSString *imageKey = self.item.itemKey;
     UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
     self.imageView.image = imageToDisplay;
+    
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if(!typeLabel){
+        typeLabel = @"None";
+    }
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
     
     [self updateFonts];
 }

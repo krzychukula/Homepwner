@@ -196,7 +196,7 @@
     return successful;
 }
 
-- (NSArray)allAssetTypes
+- (NSArray *)allAssetTypes
 {
     if (!_allAssetTypes) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -234,6 +234,8 @@
         [type setValue:@"Electronics" forKey:@"label"];
         [_allAssetTypes addObject:type];
     }
+    
+    return _allAssetTypes;
 }
 
 @end
