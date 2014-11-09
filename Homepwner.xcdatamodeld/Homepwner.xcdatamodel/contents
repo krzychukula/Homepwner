@@ -4,7 +4,7 @@
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BNRItem" inverseName="assetType" inverseEntity="BNRItem" syncable="YES"/>
     </entity>
-    <entity name="BNRItem" syncable="YES">
+    <entity name="BNRItem" representedClassName="BNRItem" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="itemKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
