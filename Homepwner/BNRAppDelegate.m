@@ -12,20 +12,32 @@
 
 @implementation BNRAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    
-    BNRItemsViewController *itemsViewController;
-    itemsViewController = [[BNRItemsViewController alloc] init];
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
-    
-    self.window.rootViewController = navController;
-    
     self.window.backgroundColor = [UIColor whiteColor];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    // If state restoration did not occur
+    if (!self.window.rootViewController) {
+ 
+        BNRItemsViewController *itemsViewController;
+        itemsViewController = [[BNRItemsViewController alloc] init];
+    
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    
+        //Give the navigation controller a restoration identifier that is the same name as the class
+        navController.restorationIdentifier = NSStringFromClass([navController class]);
+    
+        self.window.rootViewController = navController;
+    }
+    
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -62,6 +74,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
 }
 
 @end
