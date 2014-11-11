@@ -28,6 +28,17 @@
 @end
 
 @implementation BNRDetailViewController
+
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
+                                                            coder:(NSCoder *)coder
+{
+    BOOL isNew = NO;
+    if ([identifierComponents count] == 3) {
+        isNew = YES;
+    }
+    return [[self alloc] initForNewItem:isNew];
+}
+
 - (IBAction)showAssetTypePicker:(id)sender {
     
     [self.view endEditing:YES];
