@@ -43,6 +43,14 @@
 {
     [coder encodeObject:self.item.itemKey forKey:@"item.itemKey"];
     
+    //save current changes into item
+    self.item.itemName = self.nameField.text;
+    self.item.serialNumber = self.serialNumberField.text;
+    self.item.valueInDollars = [self.valueField.text intValue];
+    
+    //have store save changes to disk
+    [[BNRItemStore sharedStore] saveChanges];
+    
     [super encodeRestorableStateWithCoder:coder];
 }
 
