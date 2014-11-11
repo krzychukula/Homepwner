@@ -14,7 +14,7 @@
 #import "BNRImageStore.h"
 #import "BNRImageViewController.h"
 
-@interface BNRItemsViewController () <UIPopoverControllerDelegate>
+@interface BNRItemsViewController () <UIPopoverControllerDelegate, UIDataSourceModelAssociation>
 
 @property (nonatomic, strong) UIPopoverController *imagePopover;
 
@@ -40,6 +40,34 @@
     self.editing = [coder decodeBoolForKey:@"TableViewIsEditing"];
     
     [super decodeRestorableStateWithCoder:coder];
+}
+
+- (NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)idx inView:(UIView *)view{
+    NSString *identifier = nil;
+    
+    if(idx && view){
+        //return an identifier of the given NSIndexPah,
+        //in case next time the data source changes
+        BNRItem *item = [[BNRItemStore sharedStore] allItems][idx.row];
+        identifier = item.itemKey;
+    }
+    return identifier;
+}
+
+- (NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view{
+    NSIndexPath *indexPath = nil;
+    
+    if (identifier && view) {
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
+        for (BNRItem *item in items) {
+            if ([identifier isEqualToString:item.itemKey]) {
+                int row = (int)[items indexOfObjectIdenticalTo:item];
+                indexPath = [NSIndexPath indexPathForItem:row inSection:0];
+                break;
+            }
+        }
+    }
+    return indexPath;
 }
 
 - (instancetype)init
