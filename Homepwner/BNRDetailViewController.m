@@ -39,6 +39,26 @@
     return [[self alloc] initForNewItem:isNew];
 }
 
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.item.itemKey forKey:@"item.itemKey"];
+    
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSString *itemKey = [coder decodeObjectForKey:@"item.itemKey"];
+    
+    for (BNRItem *item in [[BNRItemStore sharedStore] allItems]) {
+        if ([itemKey isEqualToString:item.itemKey]) {
+            self.item = item;
+            break;
+        }
+    }
+    [super decodeRestorableStateWithCoder:coder];
+}
+
 - (IBAction)showAssetTypePicker:(id)sender {
     
     [self.view endEditing:YES];
