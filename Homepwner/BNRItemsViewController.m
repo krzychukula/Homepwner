@@ -68,6 +68,8 @@
     
     //register this NIB, which contains the cell
     [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
+    
+    self.tableView.restorationIdentifier = @"BNRItemsViewControllerTableView";
 
 }
 
