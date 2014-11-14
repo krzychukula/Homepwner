@@ -11,6 +11,7 @@
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
 #import "BNRAssetTypeViewController.h"
+#import "BNRAppDelegate.h";
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
@@ -171,7 +172,16 @@
     BNRItem *item = self.item;
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
-    item.valueInDollars = [self.valueField.text intValue];
+    int newValue = [self.valueField.text intValue];
+    
+    if (newValue != item.valueInDollars) {
+        //put it in the item
+        item.valueInDollars = newValue;
+        
+        //store it as the default value fot the next item
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
