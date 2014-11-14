@@ -92,6 +92,12 @@
                selector:@selector(updateTableViewForDynamicTypeSize)
                    name:UIContentSizeCategoryDidChangeNotification
                  object:nil];
+        
+        //register for locale change notification
+        [nc addObserver:self
+               selector:@selector(localeChanged:)
+                   name:NSCurrentLocaleDidChangeNotification
+                 object:nil];
     }
     return self;
 }
@@ -115,6 +121,10 @@
 
 }
 
+- (void)localeChanged:(NSNotification *)note{
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
@@ -134,7 +144,16 @@
     //configure the cell with BNRItem
     cell.nameLabel.text = item.itemName;
     cell.serialNumberLabel.text = item.serialNumber;
-    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    //create the number formatter for currency
+    NSNumberFormatter *currencyFormatter = nil;
+    
+    currencyFormatter = [[NSNumberFormatter alloc] init];
+    currencyFormatter.currencyCode = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencyCode] ;
+    NSLog(@"%@ %.2f",[[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol],25.50);
+    NSLog(@"%@ %.2f",[[NSLocale currentLocale] objectForKey:NSLocaleCurrencyCode],25.50);
+    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+
+    cell.valueLabel.text = [currencyFormatter stringFromNumber:@(item.valueInDollars)];
     cell.thumbnailView.image = item.thumbnail;
     
     __weak BNRItemCell *weakCell = cell;
