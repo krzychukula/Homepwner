@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		010CA12D1A16295B0081D5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BNRDetailViewController.xib; sourceTree = "<group>"; };
+		010CA12E1A1629C90081D5EC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/BNRDetailViewController.strings; sourceTree = "<group>"; };
 		0138859F19A1D0100087D44C /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		013885A019A1D0100087D44C /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		01A8F294199CC98D0041E758 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
@@ -342,6 +343,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				010CA12D1A16295B0081D5EC /* Base */,
+				010CA12E1A1629C90081D5EC /* es */,
 			);
 			name = BNRDetailViewController.xib;
 			sourceTree = "<group>";

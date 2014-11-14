@@ -1,0 +1,15 @@
+
+/* Class = "IBUILabel"; text = "Value"; ObjectID = "JMN-d7-KOb"; */
+"JMN-d7-KOb.text" = "Value";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "QEu-Q4-GYE"; */
+"QEu-Q4-GYE.text" = "Label";
+
+/* Class = "IBUIBarButtonItem"; title = "Type:"; ObjectID = "Ves-oX-RCV"; */
+"Ves-oX-RCV.title" = "Type:";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "kmK-aL-a2G"; */
+"kmK-aL-a2G.text" = "Name";
+
+/* Class = "IBUILabel"; text = "Serial"; ObjectID = "vAN-PA-vvw"; */
+"vAN-PA-vvw.text" = "Serial";
