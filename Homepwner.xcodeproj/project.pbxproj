@@ -12,6 +12,7 @@
 		01A8F297199CC98D0041E758 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A8F295199CC98D0041E758 /* BNRDetailViewController.m */; };
 		01D532031A1637DA0035D233 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01D532051A1637DA0035D233 /* Localizable.strings */; };
 		01D532091A1667040035D233 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01D532081A1667040035D233 /* Settings.bundle */; };
+		01D5320D1A166D750035D233 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 01D5320C1A166D750035D233 /* README.md */; };
 		01F8980F1988C0F20068FD9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8980E1988C0F20068FD9F /* Foundation.framework */; };
 		01F898111988C0F20068FD9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F898101988C0F20068FD9F /* CoreGraphics.framework */; };
 		01F898131988C0F20068FD9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F898121988C0F20068FD9F /* UIKit.framework */; };
@@ -57,6 +58,7 @@
 		01D532041A1637DA0035D233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01D532071A1637E50035D233 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01D532081A1667040035D233 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		01D5320C1A166D750035D233 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		01F8980B1988C0F20068FD9F /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F8980E1988C0F20068FD9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01F898101988C0F20068FD9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 				01F8982D1988C0F40068FD9F /* HomepwnerTests */,
 				01F8980D1988C0F20068FD9F /* Frameworks */,
 				01F8980C1988C0F20068FD9F /* Products */,
+				01D5320C1A166D750035D233 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,6 +321,7 @@
 				83B07FDB19F4153700AC6975 /* BNRItemCell.m in Sources */,
 				83B3B5111A0FA47700AC7D4E /* BNRAssetTypeViewController.m in Sources */,
 				83AB14CE19FB7E1200E49D09 /* BNRImageViewController.m in Sources */,
+				01D5320D1A166D750035D233 /* README.md in Sources */,
 				01F898451988C5FD0068FD9F /* BNRItemStore.m in Sources */,
 				013885A119A1D0100087D44C /* BNRImageStore.m in Sources */,
 				01F8983F1988C3180068FD9F /* BNRItemsViewController.m in Sources */,
