@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		010CA12B1A1628EA0081D5EC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BNRDetailViewController.xib; sourceTree = "<group>"; };
+		010CA12D1A16295B0081D5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BNRDetailViewController.xib; sourceTree = "<group>"; };
 		0138859F19A1D0100087D44C /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		013885A019A1D0100087D44C /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		01A8F294199CC98D0041E758 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
@@ -262,6 +262,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 01F898021988C0F10068FD9F;
 			productRefGroup = 01F8980C1988C0F20068FD9F /* Products */;
@@ -340,7 +341,7 @@
 		010CA12C1A1628EA0081D5EC /* BNRDetailViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				010CA12B1A1628EA0081D5EC /* en */,
+				010CA12D1A16295B0081D5EC /* Base */,
 			);
 			name = BNRDetailViewController.xib;
 			sourceTree = "<group>";
