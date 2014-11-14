@@ -9,7 +9,7 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
-#import "BNRAppDelegate.h";
+#import "BNRAppDelegate.h"
 
 @import CoreData;
 

@@ -11,7 +11,7 @@
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
 #import "BNRAssetTypeViewController.h"
-#import "BNRAppDelegate.h";
+#import "BNRAppDelegate.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
