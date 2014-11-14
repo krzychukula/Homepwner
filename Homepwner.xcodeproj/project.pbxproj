@@ -10,6 +10,7 @@
 		010CA12A1A1628EA0081D5EC /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010CA12C1A1628EA0081D5EC /* BNRDetailViewController.xib */; };
 		013885A119A1D0100087D44C /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 013885A019A1D0100087D44C /* BNRImageStore.m */; };
 		01A8F297199CC98D0041E758 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A8F295199CC98D0041E758 /* BNRDetailViewController.m */; };
+		01D532031A1637DA0035D233 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01D532051A1637DA0035D233 /* Localizable.strings */; };
 		01F8980F1988C0F20068FD9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8980E1988C0F20068FD9F /* Foundation.framework */; };
 		01F898111988C0F20068FD9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F898101988C0F20068FD9F /* CoreGraphics.framework */; };
 		01F898131988C0F20068FD9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F898121988C0F20068FD9F /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 		013885A019A1D0100087D44C /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		01A8F294199CC98D0041E758 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		01A8F295199CC98D0041E758 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
+		01D532041A1637DA0035D233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01D532071A1637E50035D233 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8980B1988C0F20068FD9F /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F8980E1988C0F20068FD9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01F898101988C0F20068FD9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,7 @@
 		01F898141988C0F20068FD9F /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				01D532051A1637DA0035D233 /* Localizable.strings */,
 				83B3B5091A0F70AC00AC7D4E /* BNRImageTransformer.h */,
 				83B3B50A1A0F70AC00AC7D4E /* BNRImageTransformer.m */,
 				83B3B5061A0F6F1F00AC7D4E /* Homepwner.xcdatamodeld */,
@@ -264,6 +268,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 01F898021988C0F10068FD9F;
 			productRefGroup = 01F8980C1988C0F20068FD9F /* Products */;
@@ -281,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D532031A1637DA0035D233 /* Localizable.strings in Resources */,
 				010CA12A1A1628EA0081D5EC /* BNRDetailViewController.xib in Resources */,
 				83B07FDE19F4163200AC6975 /* BNRItemCell.xib in Resources */,
 				01F898191988C0F20068FD9F /* InfoPlist.strings in Resources */,
@@ -346,6 +352,15 @@
 				010CA12E1A1629C90081D5EC /* es */,
 			);
 			name = BNRDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		01D532051A1637DA0035D233 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01D532041A1637DA0035D233 /* Base */,
+				01D532071A1637E50035D233 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		01F898171988C0F20068FD9F /* InfoPlist.strings */ = {
